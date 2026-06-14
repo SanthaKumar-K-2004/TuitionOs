@@ -1,0 +1,252 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Parent Portal - TuitionOS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Noto+Sans+Tamil:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-container": "#a8b8ff",
+                        "on-surface-variant": "#444653",
+                        "ui-surface": "#F8FAFC",
+                        "primary-fixed": "#dde1ff",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "surface-tint": "#3755c3",
+                        "brand-whatsapp": "#25D366",
+                        "surface-container": "#e5eeff",
+                        "on-tertiary-container": "#ffa929",
+                        "on-primary-fixed": "#001453",
+                        "status-success": "#10B981",
+                        "status-error": "#EF4444",
+                        "surface": "#f8f9ff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed": "#ffddb8",
+                        "surface-container-highest": "#d3e4fe",
+                        "surface-container-high": "#dce9ff",
+                        "status-inactive": "#E2E8F0",
+                        "surface-container-low": "#eff4ff",
+                        "error-container": "#ffdad6",
+                        "secondary": "#006a61",
+                        "tertiary-container": "#6b4200",
+                        "on-surface": "#0b1c30",
+                        "surface-bright": "#f8f9ff",
+                        "on-secondary-container": "#006f66",
+                        "surface-variant": "#d3e4fe",
+                        "on-tertiary": "#ffffff",
+                        "background": "#f8f9ff",
+                        "on-primary-fixed-variant": "#173bab",
+                        "status-warning": "#F59E0B",
+                        "outline-variant": "#c4c5d5",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed": "#2a1700",
+                        "on-secondary-fixed-variant": "#005049",
+                        "on-secondary": "#ffffff",
+                        "inverse-surface": "#213145",
+                        "surface-dim": "#cbdbf5",
+                        "secondary-fixed": "#89f5e7",
+                        "tertiary": "#4c2e00",
+                        "on-primary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "secondary-container": "#86f2e4",
+                        "tertiary-fixed-dim": "#ffb95f",
+                        "on-secondary-fixed": "#00201d",
+                        "inverse-primary": "#b8c4ff",
+                        "primary": "#00288e",
+                        "on-background": "#0b1c30",
+                        "primary-container": "#1e40af",
+                        "secondary-fixed-dim": "#6bd8cb",
+                        "outline": "#757684",
+                        "primary-fixed-dim": "#b8c4ff",
+                        "inverse-on-surface": "#eaf1ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px",
+                        "3xl": "1.5rem"
+                    },
+                    "spacing": {
+                        "touch-target-lg": "52px",
+                        "gutter": "16px",
+                        "touch-target-sm": "44px",
+                        "stack-gap": "12px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "tamil-label": ["Noto Sans Tamil"],
+                        "label-caps": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "tamil-body": ["Noto Sans Tamil"],
+                        "headline-lg": ["Inter"],
+                        "display-currency": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "body-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "tamil-label": ["12px", { "lineHeight": "18px", "fontWeight": "500" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "tamil-body": ["15px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "display-currency": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined[data-weight="fill"] {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(226, 232, 240, 0.5);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-ui-surface text-on-surface antialiased min-h-screen flex flex-col pt-touch-target-lg pb-margin-mobile px-margin-mobile md:px-0">
+<!-- TopAppBar Component (Adapted for Public View) -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile h-touch-target-lg bg-surface shadow-sm">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container font-headline-md text-headline-md">V</div>
+<h1 class="text-headline-md font-headline-md font-bold text-primary">Victory Academy</h1>
+</div>
+<div class="text-label-caps font-label-caps text-on-surface-variant flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-status-success inline-block"></span> Parent View
+        </div>
+</header>
+<main class="w-full max-w-3xl mx-auto flex flex-col gap-6 mt-6 flex-grow">
+<!-- Student Profile Card -->
+<section class="glass-card rounded-3xl p-6 flex items-center gap-6">
+<img alt="Student Profile" class="w-20 h-20 rounded-full object-cover border-2 border-primary-fixed shadow-sm" data-alt="A professional headshot of a smiling young male student of South Asian descent. He is wearing a neat white school uniform shirt and a subtle dark tie. The background is a soft, out-of-focus light grey, fitting the modern, bright light-mode aesthetic of the application. The lighting is studio quality, soft and flattering." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDl2ERc3wUgik_Aq4anXUanWyBP8YNx3_TVCQkGrC4jCeknUYvoxBr_vqV6whQyBkwRBuyl_h7Gtlu4IJnqRQDVJznz7cvzxjx_XK_iApaHZ9r-p9FJa8j_JOxwrM8jcoXngHwTuo15nRmXGlxeEOnAA9dp8I98__BTEFMFvO3lojBAQlMrT0Ogde9cxFtzB6p_XyCuFW7hbYLYIj5k1kFprtHPgX_kvMBQ4Dtpy-1cL4RhRxaCxWoycRrdT-iQa84JCRTRZf12Oupo">
+<div>
+<h2 class="text-headline-lg font-headline-lg text-on-surface mb-1">Arjun Karthikeyan</h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant">Class 10 - Science Batch A</p>
+</div>
+</section>
+<!-- Bento Grid Layout for Dashboard Info -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Attendance Summary -->
+<section class="glass-card rounded-3xl p-6">
+<div class="flex justify-between items-center mb-4">
+<h3 class="text-headline-md font-headline-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-weight="fill">calendar_today</span>
+                        Attendance
+                    </h3>
+<span class="text-body-sm font-body-sm text-on-surface-variant">Last 30 Days</span>
+</div>
+<div class="flex items-end gap-4 mb-6">
+<div class="text-display-currency font-display-currency text-primary">92%</div>
+<div class="text-body-sm font-body-sm text-status-success mb-2 font-medium">Excellent</div>
+</div>
+<div class="grid grid-cols-10 gap-1 mt-2">
+<!-- Generating a simple heatmap pattern -->
+<script>
+                        for(let i=0; i<30; i++) {
+                            let status = Math.random() > 0.1 ? 'bg-status-success' : 'bg-status-error';
+                            document.write(`<div class="w-full aspect-square rounded-sm ${status} opacity-80" title="Day ${i+1}"></div>`);
+                        }
+                    </script>
+</div>
+</section>
+<!-- Upcoming Exams -->
+<section class="glass-card rounded-3xl p-6 flex flex-col">
+<div class="flex justify-between items-center mb-4">
+<h3 class="text-headline-md font-headline-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary" data-weight="fill">menu_book</span>
+                        Upcoming Exams
+                    </h3>
+</div>
+<div class="flex-grow flex flex-col gap-3">
+<div class="bg-surface-container-low p-3 rounded-xl flex justify-between items-center">
+<div>
+<p class="text-body-lg font-body-lg font-medium text-on-surface">Physics Weekly Test</p>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Chapter 4 &amp; 5</p>
+</div>
+<div class="text-right">
+<p class="text-label-caps font-label-caps text-primary">12 OCT</p>
+<p class="text-body-sm font-body-sm text-on-surface-variant">10:00 AM</p>
+</div>
+</div>
+<div class="bg-surface-container-low p-3 rounded-xl flex justify-between items-center">
+<div>
+<p class="text-body-lg font-body-lg font-medium text-on-surface">Math Unit Exam</p>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Trigonometry</p>
+</div>
+<div class="text-right">
+<p class="text-label-caps font-label-caps text-primary">15 OCT</p>
+<p class="text-body-sm font-body-sm text-on-surface-variant">02:00 PM</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Fee History Full Width -->
+<section class="glass-card rounded-3xl p-6 md:col-span-2">
+<div class="flex justify-between items-center mb-4">
+<h3 class="text-headline-md font-headline-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" data-weight="fill">payments</span>
+                        Fee History
+                    </h3>
+</div>
+<div class="space-y-4">
+<!-- Receipt 1 -->
+<div class="flex items-center justify-between border-b border-surface-container-highest pb-4">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-status-success/10 flex items-center justify-center text-status-success">
+<span class="material-symbols-outlined">check_circle</span>
+</div>
+<div>
+<p class="text-body-lg font-body-lg font-medium text-on-surface">October Term Fee</p>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Paid on 01 Oct 2023</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-headline-md font-headline-md text-on-surface font-semibold">₹2,500</span>
+<button class="w-10 h-10 rounded-full hover:bg-surface-container-highest flex items-center justify-center text-primary transition-colors" title="Download Receipt">
+<span class="material-symbols-outlined">download</span>
+</button>
+</div>
+</div>
+<!-- Receipt 2 -->
+<div class="flex items-center justify-between border-b border-surface-container-highest pb-4">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-status-success/10 flex items-center justify-center text-status-success">
+<span class="material-symbols-outlined">check_circle</span>
+</div>
+<div>
+<p class="text-body-lg font-body-lg font-medium text-on-surface">September Term Fee</p>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Paid on 05 Sep 2023</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-headline-md font-headline-md text-on-surface font-semibold">₹2,500</span>
+<button class="w-10 h-10 rounded-full hover:bg-surface-container-highest flex items-center justify-center text-primary transition-colors" title="Download Receipt">
+<span class="material-symbols-outlined">download</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Floating WhatsApp Contact Button (Contextual for Parent View) -->
+<a class="fixed bottom-margin-mobile right-margin-mobile bg-[#25D366] text-white px-6 py-4 rounded-full shadow-lg flex items-center gap-2 hover:opacity-90 transition-opacity z-40" href="#">
+<span class="material-symbols-outlined">chat</span>
+<span class="font-body-lg text-body-lg font-medium">Contact Center</span>
+</a>
+</main>
+</body></html>

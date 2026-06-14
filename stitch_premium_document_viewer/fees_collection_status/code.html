@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>TuitionOS - Fee Tracking</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Noto+Sans+Tamil:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#00288e",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed-variant": "#005049",
+                        "status-success": "#10B981",
+                        "surface-dim": "#cbdbf5",
+                        "brand-whatsapp": "#25D366",
+                        "on-primary-fixed-variant": "#173bab",
+                        "secondary-container": "#86f2e4",
+                        "secondary": "#006a61",
+                        "on-background": "#0b1c30",
+                        "inverse-on-surface": "#eaf1ff",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed": "#001453",
+                        "on-secondary-container": "#006f66",
+                        "on-secondary-fixed": "#00201d",
+                        "tertiary-fixed-dim": "#ffb95f",
+                        "tertiary": "#4c2e00",
+                        "primary-fixed-dim": "#b8c4ff",
+                        "on-error-container": "#93000a",
+                        "on-primary-container": "#a8b8ff",
+                        "secondary-fixed": "#89f5e7",
+                        "on-secondary": "#ffffff",
+                        "status-inactive": "#E2E8F0",
+                        "surface-container-low": "#eff4ff",
+                        "error": "#ba1a1a",
+                        "inverse-primary": "#b8c4ff",
+                        "secondary-fixed-dim": "#6bd8cb",
+                        "outline": "#757684",
+                        "inverse-surface": "#213145",
+                        "on-tertiary-fixed": "#2a1700",
+                        "outline-variant": "#c4c5d5",
+                        "on-tertiary-container": "#ffa929",
+                        "status-error": "#EF4444",
+                        "primary-fixed": "#dde1ff",
+                        "primary-container": "#1e40af",
+                        "tertiary-fixed": "#ffddb8",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "on-tertiary": "#ffffff",
+                        "on-surface": "#0b1c30",
+                        "surface-container-high": "#dce9ff",
+                        "surface": "#f8f9ff",
+                        "surface-variant": "#d3e4fe",
+                        "tertiary-container": "#6b4200",
+                        "surface-bright": "#f8f9ff",
+                        "surface-tint": "#3755c3",
+                        "status-warning": "#F59E0B",
+                        "surface-container-lowest": "#ffffff",
+                        "ui-surface": "#F8FAFC",
+                        "background": "#f8f9ff",
+                        "on-surface-variant": "#444653",
+                        "on-error": "#ffffff",
+                        "surface-container": "#e5eeff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "touch-target-sm": "44px",
+                        "touch-target-lg": "52px",
+                        "stack-gap": "12px",
+                        "margin-mobile": "20px",
+                        "gutter": "16px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Inter"],
+                        "tamil-body": ["Noto Sans Tamil"],
+                        "headline-md": ["Inter"],
+                        "display-currency": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "tamil-label": ["Noto Sans Tamil"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "tamil-body": ["15px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "display-currency": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "tamil-label": ["12px", { "lineHeight": "18px", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #F8FAFC; padding-bottom: 80px; padding-top: 64px; }
+        .card-shadow { box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+        .nav-shadow { box-shadow: 0 -2px 8px rgba(0,0,0,0.05); }
+        .glass-panel { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px); }
+        
+        /* Smooth tab transition */
+        .tab-content { display: none; animation: fadeIn 0.3s ease-in-out; }
+        .tab-content.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="text-on-surface antialiased font-body-lg">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile h-touch-target-lg bg-surface shadow-sm">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-headline-md">
+                CM
+            </div>
+<h1 class="text-headline-md font-headline-md font-bold text-primary">TuitionOS</h1>
+</div>
+<button class="w-touch-target-sm h-touch-target-sm flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low rounded-full transition-transform duration-150 active:scale-95">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">notifications</span>
+</button>
+</header>
+<main class="px-margin-mobile py-stack-gap space-y-stack-gap">
+<!-- Header & Month Selector -->
+<div class="flex justify-between items-end mb-6">
+<div>
+<h2 class="text-headline-lg font-headline-lg text-on-surface">Fee Collection</h2>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-1 font-tamil-body">கட்டண வசூல்</p>
+</div>
+<button class="flex items-center gap-2 bg-surface-container-highest px-4 py-2 rounded-lg text-primary font-body-sm font-medium hover:bg-primary-container hover:text-on-primary transition-colors active:scale-95">
+<span class="material-symbols-outlined text-[20px]">calendar_month</span>
+                May 2026
+            </button>
+</div>
+<!-- Summary Widget (Bento Style) -->
+<div class="grid grid-cols-2 gap-stack-gap mb-6">
+<div class="bg-surface-container-lowest rounded-xl p-4 border border-outline-variant card-shadow relative overflow-hidden">
+<div class="absolute top-0 right-0 w-16 h-16 bg-status-success/10 rounded-bl-full -mr-4 -mt-4"></div>
+<p class="text-label-caps font-label-caps text-on-surface-variant mb-1 uppercase tracking-wider">Collected</p>
+<p class="text-display-currency font-display-currency text-status-success">₹42k</p>
+<p class="text-tamil-label font-tamil-label text-outline mt-1">வசூலிக்கப்பட்டது</p>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-4 border border-outline-variant card-shadow relative overflow-hidden">
+<div class="absolute top-0 right-0 w-16 h-16 bg-status-warning/10 rounded-bl-full -mr-4 -mt-4"></div>
+<p class="text-label-caps font-label-caps text-on-surface-variant mb-1 uppercase tracking-wider">Expected</p>
+<p class="text-display-currency font-display-currency text-status-warning">₹68k</p>
+<p class="text-tamil-label font-tamil-label text-outline mt-1">எதிர்பார்க்கப்படுகிறது</p>
+</div>
+</div>
+<!-- Tab Navigation -->
+<div class="flex gap-2 mb-6 overflow-x-auto pb-2 -mx-margin-mobile px-margin-mobile hide-scrollbar">
+<button class="flex-shrink-0 px-6 py-2.5 rounded-full bg-status-warning text-on-primary font-body-sm font-medium transition-all shadow-md" id="tab-pending" onclick="switchTab('pending')">
+                Pending (12)
+            </button>
+<button class="flex-shrink-0 px-6 py-2.5 rounded-full bg-surface-container-highest text-on-surface-variant font-body-sm font-medium transition-all hover:bg-surface-container-high" id="tab-overdue" onclick="switchTab('overdue')">
+                Overdue (4)
+            </button>
+<button class="flex-shrink-0 px-6 py-2.5 rounded-full bg-surface-container-highest text-on-surface-variant font-body-sm font-medium transition-all hover:bg-surface-container-high" id="tab-paid" onclick="switchTab('paid')">
+                Paid (28)
+            </button>
+</div>
+<!-- Content Area -->
+<div class="tab-content active space-y-stack-gap" id="content-pending">
+<!-- Student Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant p-4 card-shadow flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-lg bg-surface-variant flex items-center justify-center text-primary font-headline-md font-bold">
+                            AR
+                        </div>
+<div>
+<h3 class="text-headline-md font-headline-md text-on-surface">Arjun Reddy</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Class 10 • Mathematics</p>
+</div>
+</div>
+<span class="inline-flex items-center px-2.5 py-1 rounded-full text-label-caps font-label-caps bg-status-warning/15 text-status-warning">
+                        ₹2,500 PENDING
+                    </span>
+</div>
+<div class="flex gap-2 mt-2">
+<button class="flex-1 h-touch-target-sm bg-primary text-on-primary rounded-lg font-body-sm font-medium flex items-center justify-center gap-2 active:scale-95 transition-transform" onclick="markAsPaid(this)">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+                        Mark Paid
+                    </button>
+<a class="w-touch-target-sm h-touch-target-sm bg-[#25D366]/10 text-brand-whatsapp rounded-lg flex items-center justify-center active:scale-95 transition-transform border border-[#25D366]/20" href="https://wa.me/1234567890" target="_blank">
+<svg class="w-6 h-6 fill-current" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"></path></svg>
+</a>
+</div>
+</div>
+<!-- Student Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant p-4 card-shadow flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-lg bg-surface-variant flex items-center justify-center text-primary font-headline-md font-bold">
+                            SK
+                        </div>
+<div>
+<h3 class="text-headline-md font-headline-md text-on-surface">Sneha Kumar</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Class 12 • Physics</p>
+</div>
+</div>
+<span class="inline-flex items-center px-2.5 py-1 rounded-full text-label-caps font-label-caps bg-status-warning/15 text-status-warning">
+                        ₹3,200 PENDING
+                    </span>
+</div>
+<div class="flex gap-2 mt-2">
+<button class="flex-1 h-touch-target-sm bg-primary text-on-primary rounded-lg font-body-sm font-medium flex items-center justify-center gap-2 active:scale-95 transition-transform" onclick="markAsPaid(this)">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+                        Mark Paid
+                    </button>
+<a class="w-touch-target-sm h-touch-target-sm bg-[#25D366]/10 text-brand-whatsapp rounded-lg flex items-center justify-center active:scale-95 transition-transform border border-[#25D366]/20" href="https://wa.me/1234567890" target="_blank">
+<svg class="w-6 h-6 fill-current" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"></path></svg>
+</a>
+</div>
+</div>
+</div>
+<div class="tab-content space-y-stack-gap" id="content-overdue">
+<div class="text-center py-8 text-on-surface-variant">
+<span class="material-symbols-outlined text-[48px] mb-2 opacity-50">warning</span>
+<p>Overdue students will appear here.</p>
+</div>
+</div>
+<div class="tab-content space-y-stack-gap" id="content-paid">
+<div class="text-center py-8 text-on-surface-variant">
+<span class="material-symbols-outlined text-[48px] mb-2 opacity-50">task_alt</span>
+<p>Recently paid students will appear here.</p>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 pb-2 pt-1 h-16 bg-surface shadow-[0_-2px_8px_rgba(0,0,0,0.05)] rounded-t-xl md:hidden">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-low transition-colors w-16 h-14 rounded-lg" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">dashboard</span>
+<span class="text-[10px] font-label-caps mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-low transition-colors w-16 h-14 rounded-lg" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">group</span>
+<span class="text-[10px] font-label-caps mt-1">Students</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-low transition-colors w-16 h-14 rounded-lg" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">calendar_month</span>
+<span class="text-[10px] font-label-caps mt-1">Batches</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary font-bold scale-95 transition-all duration-200 w-16 h-14 rounded-lg bg-surface-container-low" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">payments</span>
+<span class="text-[10px] font-label-caps mt-1">Fees</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-low transition-colors w-16 h-14 rounded-lg" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">person_add</span>
+<span class="text-[10px] font-label-caps mt-1">Leads</span>
+</a>
+</nav>
+<script>
+        function switchTab(tabId) {
+            // Update buttons
+            ['pending', 'overdue', 'paid'].forEach(id => {
+                const btn = document.getElementById('tab-' + id);
+                if (id === tabId) {
+                    btn.classList.remove('bg-surface-container-highest', 'text-on-surface-variant');
+                    if(tabId === 'pending') btn.classList.add('bg-status-warning', 'text-on-primary');
+                    if(tabId === 'overdue') btn.classList.add('bg-status-error', 'text-on-primary');
+                    if(tabId === 'paid') btn.classList.add('bg-status-success', 'text-on-primary');
+                } else {
+                    btn.classList.remove('bg-status-warning', 'bg-status-error', 'bg-status-success', 'text-on-primary');
+                    btn.classList.add('bg-surface-container-highest', 'text-on-surface-variant');
+                }
+            });
+
+            // Update content
+            ['pending', 'overdue', 'paid'].forEach(id => {
+                const content = document.getElementById('content-' + id);
+                if (id === tabId) {
+                    content.classList.add('active');
+                } else {
+                    content.classList.remove('active');
+                }
+            });
+        }
+
+        function markAsPaid(btn) {
+            // Simple visual confirmation
+            const originalHtml = btn.innerHTML;
+            btn.innerHTML = '<span class="material-symbols-outlined text-[20px]">done_all</span> Paid';
+            btn.classList.remove('bg-primary');
+            btn.classList.add('bg-status-success');
+            
+            setTimeout(() => {
+                // In a real app, this would remove the card or move it to the 'Paid' tab.
+                // For demo, we just fade it out slightly to indicate completion.
+                btn.closest('.bg-surface-container-lowest').style.opacity = '0.5';
+                btn.closest('.bg-surface-container-lowest').style.pointerEvents = 'none';
+            }, 800);
+        }
+    </script>
+</body></html>

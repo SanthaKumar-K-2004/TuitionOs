@@ -1,0 +1,290 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>TuitionOS - Run your tuition center from your phone</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Noto+Sans+Tamil:wght@400;500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "status-warning": "#F59E0B",
+                        "error": "#ba1a1a",
+                        "on-background": "#0b1c30",
+                        "surface-container-low": "#eff4ff",
+                        "primary-fixed": "#dde1ff",
+                        "surface-container-highest": "#d3e4fe",
+                        "error-container": "#ffdad6",
+                        "secondary-container": "#86f2e4",
+                        "on-secondary-fixed-variant": "#005049",
+                        "secondary": "#006a61",
+                        "inverse-on-surface": "#eaf1ff",
+                        "status-error": "#EF4444",
+                        "on-error-container": "#93000a",
+                        "ui-surface": "#F8FAFC",
+                        "primary": "#00288e",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed": "#2a1700",
+                        "surface-container": "#e5eeff",
+                        "primary-container": "#1e40af",
+                        "outline-variant": "#c4c5d5",
+                        "background": "#f8f9ff",
+                        "on-primary-fixed": "#001453",
+                        "tertiary-fixed": "#ffddb8",
+                        "status-inactive": "#E2E8F0",
+                        "tertiary-container": "#6b4200",
+                        "on-secondary-container": "#006f66",
+                        "on-surface": "#0b1c30",
+                        "status-success": "#10B981",
+                        "on-secondary": "#ffffff",
+                        "surface": "#f8f9ff",
+                        "surface-container-lowest": "#ffffff",
+                        "brand-whatsapp": "#25D366",
+                        "secondary-fixed-dim": "#6bd8cb",
+                        "on-tertiary-container": "#ffa929",
+                        "surface-container-high": "#dce9ff",
+                        "secondary-fixed": "#89f5e7",
+                        "surface-dim": "#cbdbf5",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "on-surface-variant": "#444653",
+                        "tertiary": "#4c2e00",
+                        "on-primary-container": "#a8b8ff",
+                        "surface-variant": "#d3e4fe",
+                        "on-primary-fixed-variant": "#173bab",
+                        "on-primary": "#ffffff",
+                        "inverse-primary": "#b8c4ff",
+                        "tertiary-fixed-dim": "#ffb95f",
+                        "surface-bright": "#f8f9ff",
+                        "on-error": "#ffffff",
+                        "inverse-surface": "#213145",
+                        "outline": "#757684",
+                        "on-secondary-fixed": "#00201d",
+                        "primary-fixed-dim": "#b8c4ff",
+                        "surface-tint": "#3755c3"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px",
+                        "2xl": "1.5rem"
+                    },
+                    "spacing": {
+                        "touch-target-lg": "52px",
+                        "gutter": "16px",
+                        "stack-gap": "12px",
+                        "margin-mobile": "20px",
+                        "touch-target-sm": "44px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Inter"],
+                        "tamil-body": ["Noto Sans Tamil"],
+                        "label-caps": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "tamil-label": ["Noto Sans Tamil"],
+                        "body-lg": ["Inter"],
+                        "display-currency": ["Inter"],
+                        "body-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "tamil-body": ["15px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "tamil-label": ["12px", {"lineHeight": "18px", "fontWeight": "500"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "display-currency": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined[data-weight="fill"] {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-ui-surface text-on-surface font-body-lg min-h-screen antialiased">
+<!-- Top Navigation -->
+<nav class="fixed top-0 left-0 w-full z-50 bg-surface shadow-sm h-touch-target-lg flex justify-between items-center px-margin-mobile md:px-8">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-3xl" data-weight="fill">school</span>
+<span class="text-headline-md font-headline-md font-bold text-primary">TuitionOS</span>
+</div>
+<div class="flex items-center gap-4">
+<a class="hidden md:block text-body-lg font-body-lg text-on-surface-variant hover:text-primary transition-colors" href="#features">Features</a>
+<a class="hidden md:block text-body-lg font-body-lg text-on-surface-variant hover:text-primary transition-colors" href="#pricing">Pricing</a>
+<a class="bg-primary text-on-primary text-body-sm font-body-lg font-semibold px-4 py-2 rounded-lg hover:bg-primary-container transition-colors" href="#cta">Free Trial</a>
+</div>
+</nav>
+<!-- Hero Section -->
+<main class="pt-24 pb-16 px-margin-mobile md:px-8 max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+<div class="flex flex-col gap-6">
+<div class="inline-flex items-center gap-2 bg-surface-container px-3 py-1.5 rounded-full w-fit">
+<span class="material-symbols-outlined text-primary text-sm">verified</span>
+<span class="text-tamil-label font-tamil-label text-primary">உங்கள் centre, smart ஆ நடக்கும்</span>
+</div>
+<h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-on-surface leading-tight">
+                Run your tuition center from your <span class="text-primary">phone.</span>
+</h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-lg">
+                Fee tracking, attendance, and parent updates — all in one place. Built for the way Tamil Nadu teachers actually work.
+            </p>
+<div class="flex flex-col sm:flex-row gap-4 mt-4">
+<button class="bg-primary hover:bg-primary-container text-on-primary h-touch-target-lg px-8 rounded-xl text-body-lg font-headline-md shadow-lg transition-all active:scale-95 flex items-center justify-center gap-2">
+                    Start 14-Day Free Trial
+                    <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<button class="bg-surface hover:bg-surface-container text-on-surface border border-outline-variant h-touch-target-lg px-8 rounded-xl text-body-lg font-headline-md shadow-sm transition-all active:scale-95 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-brand-whatsapp">chat</span>
+                    Chat with Us
+                </button>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-status-success text-sm" data-weight="fill">check_circle</span>
+                Trusted by centers in Madurai, Salem, and Tirunelveli.
+            </p>
+</div>
+<div class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-xl border border-outline-variant/30 group">
+<img alt="Teacher using mobile app in modern classroom" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A brightly lit, modern tuition classroom setting featuring a confident South Indian teacher holding a smartphone, actively using an educational management app. The environment is professional yet welcoming, with soft natural lighting and clean, light-mode aesthetics. The color palette emphasizes crisp whites, subtle slate grays, and energetic blue accents, aligning perfectly with the 'Vibrant Professional' brand style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB26OoCVoTg18YULcjD2iY2jrpS3OjKFSXTAsGm6rQ3z9ugkOZ_jddb7OzG6WMtftNAwOb7zt3lC1Aa44cjr428i1Rv59CWw3vMqWxc8AvbKl0proYBEkvii872pyy2kIMDJaoVbJ5k0mM-S_EXG2BP2PcTs10oYEEesmpkBs3EAEn3P4s6plS-J0gPYFBzkGin7LAtcvFnzACzf0T4-sGTonfD5tCJm2L3tVvNEkXfvM9a5eOVsHH5h3JW6nQLrfbDGxX0OfsajvON">
+<!-- Decorative gradient overlay for depth -->
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+</div>
+</main>
+<!-- Value Propositions Bento Grid -->
+<section class="py-16 px-margin-mobile md:px-8 max-w-7xl mx-auto bg-surface-container-low rounded-3xl my-12" id="features">
+<div class="text-center mb-12">
+<h2 class="text-headline-lg font-headline-lg text-on-surface mb-4">Everything you need to manage your center</h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-2xl mx-auto">Stop juggling notebooks and spreadsheets. TuitionOS brings all your daily tasks into one intuitive app.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Feature 1 -->
+<div class="bg-surface p-6 rounded-2xl shadow-sm border border-outline-variant/50 hover:shadow-md transition-shadow">
+<div class="w-12 h-12 bg-primary-container/10 rounded-xl flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-primary text-2xl" data-weight="fill">payments</span>
+</div>
+<h3 class="text-headline-md font-headline-md text-on-surface mb-2">Fee Tracking</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-4">Stop losing ₹3,000–8,000/month in uncollected fees. Track payments effortlessly.</p>
+<div class="inline-flex items-center gap-1.5 text-brand-whatsapp text-sm font-semibold">
+<span class="material-symbols-outlined text-sm">mark_email_unread</span>
+                    WhatsApp Reminders
+                </div>
+</div>
+<!-- Feature 2 -->
+<div class="bg-surface p-6 rounded-2xl shadow-sm border border-outline-variant/50 hover:shadow-md transition-shadow">
+<div class="w-12 h-12 bg-secondary-container/30 rounded-xl flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-secondary text-2xl" data-weight="fill">fact_check</span>
+</div>
+<h3 class="text-headline-md font-headline-md text-on-surface mb-2">2-Minute Attendance</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-4">Mark attendance for 30+ students instantly. High-speed interface designed for quick taps.</p>
+<div class="inline-flex items-center gap-1.5 text-status-warning text-sm font-semibold">
+<span class="material-symbols-outlined text-sm">notifications_active</span>
+                    Auto-Notify Parents
+                </div>
+</div>
+<!-- Feature 3 -->
+<div class="bg-surface p-6 rounded-2xl shadow-sm border border-outline-variant/50 hover:shadow-md transition-shadow">
+<div class="w-12 h-12 bg-tertiary-container/10 rounded-xl flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-tertiary text-2xl" data-weight="fill">group_work</span>
+</div>
+<h3 class="text-headline-md font-headline-md text-on-surface mb-2">Batch Management</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Organize your 10th, 12th, and foundation batches with smart scheduling and easily accessible student lists.</p>
+</div>
+<!-- Feature 4 -->
+<div class="bg-surface p-6 rounded-2xl shadow-sm border border-outline-variant/50 hover:shadow-md transition-shadow">
+<div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-primary text-2xl" data-weight="fill">verified_user</span>
+</div>
+<h3 class="text-headline-md font-headline-md text-on-surface mb-2">Parent Trust</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Share professional progress reports and digital receipts instantly. No app install required for parents.</p>
+</div>
+</div>
+</section>
+<!-- Pricing Section -->
+<section class="py-16 px-margin-mobile md:px-8 max-w-4xl mx-auto" id="pricing">
+<div class="text-center mb-12">
+<h2 class="text-headline-lg font-headline-lg text-on-surface mb-4">Simple, straightforward pricing</h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant">Start managing your center efficiently without breaking the bank.</p>
+</div>
+<div class="bg-surface rounded-3xl shadow-lg border-2 border-primary overflow-hidden relative">
+<!-- 'Most Popular' Badge -->
+<div class="absolute top-0 right-0 bg-primary text-on-primary text-label-caps font-label-caps px-4 py-2 rounded-bl-xl">
+                MOST POPULAR
+            </div>
+<div class="p-8 md:p-12 flex flex-col md:flex-row gap-8 items-center md:items-start justify-between">
+<div class="flex-1">
+<h3 class="text-headline-md font-headline-md text-on-surface mb-2">Starter Plan</h3>
+<div class="mb-6">
+<span class="text-display-currency font-display-currency text-on-surface">₹499</span>
+<span class="text-body-lg font-body-lg text-on-surface-variant">/month</span>
+</div>
+<ul class="space-y-4 mb-8">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-status-success" data-weight="fill">check_circle</span>
+<span class="text-body-lg font-body-lg text-on-surface">Up to 60 students</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-status-success" data-weight="fill">check_circle</span>
+<span class="text-body-lg font-body-lg text-on-surface">All MVP features included</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-status-success" data-weight="fill">check_circle</span>
+<span class="text-body-lg font-body-lg text-on-surface">Automated WhatsApp reminders</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-status-success" data-weight="fill">check_circle</span>
+<span class="text-body-lg font-body-lg text-on-surface">Manage 1 center easily</span>
+</li>
+</ul>
+</div>
+<div class="w-full md:w-auto flex flex-col gap-4">
+<button class="w-full bg-primary hover:bg-primary-container text-on-primary h-touch-target-lg px-8 rounded-xl text-body-lg font-headline-md shadow-lg transition-all active:scale-95 flex items-center justify-center">
+                        Get Started Now
+                    </button>
+<p class="text-center text-body-sm font-body-sm text-on-surface-variant">14-day free trial. No credit card required.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-inverse-surface pt-16 pb-8 px-margin-mobile md:px-8 mt-12 border-t border-outline-variant/20">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+<div>
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-inverse-primary text-3xl" data-weight="fill">school</span>
+<span class="text-headline-md font-headline-md font-bold text-on-error">TuitionOS</span>
+</div>
+<p class="text-on-surface-variant dark:text-outline-variant text-body-sm font-body-sm max-w-xs">
+                    Empowering tuition centers across Tamil Nadu with smart management tools.
+                </p>
+</div>
+<div class="flex flex-col gap-3">
+<h4 class="text-on-error font-headline-md mb-2">Product</h4>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-inverse-primary transition-colors text-body-sm font-body-sm" href="#features">Features</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-inverse-primary transition-colors text-body-sm font-body-sm" href="#pricing">Pricing</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-inverse-primary transition-colors text-body-sm font-body-sm" href="#">Sign In</a>
+</div>
+<div class="flex flex-col gap-3">
+<h4 class="text-on-error font-headline-md mb-2">Contact</h4>
+<button class="bg-[#25D366]/10 text-[#25D366] hover:bg-[#25D366]/20 border border-[#25D366]/30 h-touch-target-sm px-6 rounded-lg text-body-sm font-headline-md transition-all flex items-center justify-center gap-2 w-fit">
+<span class="material-symbols-outlined">chat</span>
+                    Chat on WhatsApp
+                </button>
+</div>
+</div>
+<div class="max-w-7xl mx-auto pt-8 border-t border-outline-variant/10 text-center md:text-left">
+<p class="text-on-surface-variant dark:text-outline-variant text-label-caps font-label-caps opacity-70">
+                © 2024 Alphax Solution. All rights reserved.
+            </p>
+</div>
+</footer>
+</body></html>

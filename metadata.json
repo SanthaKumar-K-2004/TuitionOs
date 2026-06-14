@@ -1,0 +1,6 @@
+{
+  "name": "TuitionOS",
+  "description": "Smart Tuition Center Management app with student tracking, attendance registers, fee schedules, and leads directory.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

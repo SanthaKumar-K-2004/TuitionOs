@@ -1,0 +1,9 @@
+# local.properties template - copy to local.properties and fill values (DO NOT COMMIT)
+
+SUPABASE_URL=https://your-project.supabase.co
+SUPABASE_KEY=eyJ...your_anon_public_key_here...
+
+# Optional: signing keys used by CI
+# KEYSTORE_PATH=/path/to/keystore.jks
+# STORE_PASSWORD=your_store_password
+# KEY_PASSWORD=your_key_password

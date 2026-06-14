@@ -1,0 +1,296 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Student Profile - Arjun K.</title>
+<!-- Fonts & Icons -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Noto+Sans+Tamil:wght@400;500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-tint": "#3755c3",
+                        "on-surface-variant": "#444653",
+                        "surface-container-highest": "#d3e4fe",
+                        "surface-bright": "#f8f9ff",
+                        "surface": "#f8f9ff",
+                        "on-tertiary-fixed": "#2a1700",
+                        "on-secondary-fixed": "#00201d",
+                        "secondary-container": "#86f2e4",
+                        "surface-container-low": "#eff4ff",
+                        "secondary-fixed-dim": "#6bd8cb",
+                        "surface-variant": "#d3e4fe",
+                        "on-tertiary-container": "#ffa929",
+                        "tertiary-fixed": "#ffddb8",
+                        "on-secondary-fixed-variant": "#005049",
+                        "background": "#f8f9ff",
+                        "surface-dim": "#cbdbf5",
+                        "error-container": "#ffdad6",
+                        "brand-whatsapp": "#25D366",
+                        "on-secondary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "secondary": "#006a61",
+                        "primary-fixed-dim": "#b8c4ff",
+                        "on-tertiary": "#ffffff",
+                        "outline-variant": "#c4c5d5",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed-dim": "#ffb95f",
+                        "on-primary-fixed": "#001453",
+                        "on-error": "#ffffff",
+                        "surface-container": "#e5eeff",
+                        "primary-fixed": "#dde1ff",
+                        "surface-container-high": "#dce9ff",
+                        "status-success": "#10B981",
+                        "ui-surface": "#F8FAFC",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary": "#4c2e00",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-primary-container": "#a8b8ff",
+                        "inverse-primary": "#b8c4ff",
+                        "secondary-fixed": "#89f5e7",
+                        "status-error": "#EF4444",
+                        "on-surface": "#0b1c30",
+                        "error": "#ba1a1a",
+                        "tertiary-container": "#6b4200",
+                        "status-warning": "#F59E0B",
+                        "on-background": "#0b1c30",
+                        "primary": "#00288e",
+                        "on-secondary-container": "#006f66",
+                        "on-primary-fixed-variant": "#173bab",
+                        "status-inactive": "#E2E8F0",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "primary-container": "#1e40af",
+                        "inverse-surface": "#213145",
+                        "outline": "#757684"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-gap": "12px",
+                        "margin-mobile": "20px",
+                        "touch-target-lg": "52px",
+                        "touch-target-sm": "44px",
+                        "gutter": "16px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "display-currency": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "tamil-label": ["Noto Sans Tamil"],
+                        "tamil-body": ["Noto Sans Tamil"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "headline-lg": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "display-currency": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "tamil-label": ["12px", { "lineHeight": "18px", "fontWeight": "500" }],
+                        "tamil-body": ["15px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { -webkit-tap-highlight-color: transparent; }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-sm min-h-screen">
+<!-- Sub-Page Header (Navigation Shell Suppressed for Detail View) -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile h-touch-target-lg bg-surface shadow-sm transition-transform duration-300">
+<button aria-label="Go Back" class="w-touch-target-sm h-touch-target-sm flex items-center justify-start -ml-2 text-on-surface active:scale-95 transition-transform">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<div class="flex-1 px-2">
+<h1 class="font-headline-md text-headline-md text-on-surface truncate">Student Profile</h1>
+</div>
+<div class="flex gap-2">
+<button aria-label="Edit Profile" class="w-touch-target-sm h-touch-target-sm flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low rounded-full transition-colors active:scale-95">
+<span class="material-symbols-outlined">edit</span>
+</button>
+<button aria-label="Delete Student" class="w-touch-target-sm h-touch-target-sm flex items-center justify-end text-error hover:bg-error-container rounded-full transition-colors active:scale-95">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-[80px] pb-8 px-margin-mobile flex flex-col gap-stack-gap max-w-md mx-auto">
+<!-- Profile Identity Card -->
+<section class="bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant p-gutter flex gap-4 items-center">
+<div class="relative">
+<img alt="Arjun K." class="w-16 h-16 rounded-full object-cover border-2 border-surface-container" data-alt="A professional, high-quality headshot photograph of a young Indian male student, approximately 15 years old, looking approachable and smart. He is wearing a neat, casual collared shirt. The lighting is soft and natural, suggesting a bright daytime environment. The background is a very subtle, blurred modern classroom or light-colored plain wall, ensuring the focus remains entirely on the student's face. The overall mood is positive, academic, and clean, fitting a modern education app interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBonThxqiI5DN-ZLpqtl12xfgGoU03N7zXwC4W9f79zbGLq1hx235xON7hVVK-OidHzq8g9YuTjGgkmsAK2TKbXfrwd1dVCKr1xUm2sGu-STZR1CEfwW_IUTvbRl-7fTtayxkGgnWhcGn04smdNuHRlifAOM5NE9rDnFoiTVCpnx6__oEfzFyIeFKPvMie8QofHyUzzF5mBFi3bVlmK8wRq32NX47vly61-DTuA7319hrwwaxu5rW_tquam0eAxx1oRg9aQVNUE02Vl">
+<div class="absolute -bottom-1 -right-1 w-5 h-5 bg-status-success rounded-full border-2 border-surface-container-lowest flex items-center justify-center">
+<span class="material-symbols-outlined text-[12px] text-on-primary" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+</div>
+<div class="flex-1 flex flex-col">
+<h2 class="font-headline-md text-headline-md text-primary">Arjun K.</h2>
+<div class="flex items-center gap-2 mt-1">
+<span class="font-body-sm text-body-sm text-on-surface-variant">ID: TUI-24-089</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Class 10 CBSE</span>
+</div>
+</div>
+</section>
+<!-- Quick Actions -->
+<section class="flex gap-gutter">
+<button class="flex-1 h-touch-target-sm bg-brand-whatsapp text-on-primary rounded-lg flex items-center justify-center gap-2 shadow-sm active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">chat</span>
+<span class="font-label-caps text-label-caps">WhatsApp</span>
+</button>
+<button class="flex-1 h-touch-target-sm bg-primary-container text-on-primary-container rounded-lg flex items-center justify-center gap-2 shadow-sm active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">call</span>
+<span class="font-label-caps text-label-caps">Call Parent</span>
+</button>
+</section>
+<!-- Batch Information -->
+<section class="flex flex-col gap-2 mt-2">
+<div class="px-1">
+<h3 class="font-label-caps text-label-caps text-on-surface-variant tracking-wider uppercase">Batch Information</h3>
+<p class="font-tamil-label text-tamil-label text-on-surface-variant mt-0.5 opacity-80">தொகுதி தகவல்</p>
+</div>
+<div class="bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant p-gutter">
+<div class="flex justify-between items-start mb-3">
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md text-on-surface text-[18px]">Evening Science Masterclass</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-1">Physics, Chemistry, Biology</span>
+</div>
+<span class="bg-primary-container text-on-primary-container font-label-caps text-label-caps px-2.5 py-1 rounded-full whitespace-nowrap">Active</span>
+</div>
+<div class="flex gap-4 border-t border-outline-variant pt-3 mt-1">
+<div class="flex items-center gap-1.5 font-body-sm text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-primary">schedule</span>
+<span>5:00 PM - 7:00 PM</span>
+</div>
+<div class="flex items-center gap-1.5 font-body-sm text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-primary">calendar_month</span>
+<span>Mon, Wed, Fri</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Academic Progress (Bento Grid) -->
+<section class="flex flex-col gap-2 mt-2">
+<div class="px-1">
+<h3 class="font-label-caps text-label-caps text-on-surface-variant tracking-wider uppercase">Academic Progress</h3>
+<p class="font-tamil-label text-tamil-label text-on-surface-variant mt-0.5 opacity-80">கல்வி முன்னேற்றம்</p>
+</div>
+<div class="grid grid-cols-2 gap-stack-gap">
+<!-- Attendance Stats -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant p-4 flex flex-col items-center text-center relative overflow-hidden">
+<div class="absolute -right-4 -top-4 w-16 h-16 bg-surface-container rounded-full opacity-50"></div>
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center mb-2 z-10">
+<span class="material-symbols-outlined text-primary">how_to_reg</span>
+</div>
+<span class="font-headline-lg text-headline-lg text-status-success z-10">94%</span>
+<span class="font-body-sm text-body-sm text-on-surface mt-1 z-10">Attendance</span>
+<span class="font-tamil-label text-tamil-label text-on-surface-variant mt-0.5 z-10">வருகை</span>
+</div>
+<!-- Test Stats -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant p-4 flex flex-col items-center text-center relative overflow-hidden">
+<div class="absolute -left-4 -top-4 w-16 h-16 bg-surface-container rounded-full opacity-50"></div>
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center mb-2 z-10">
+<span class="material-symbols-outlined text-tertiary">quiz</span>
+</div>
+<span class="font-headline-lg text-headline-lg text-on-surface z-10">88<span class="text-[16px] text-on-surface-variant">/100</span></span>
+<span class="font-body-sm text-body-sm text-on-surface mt-1 z-10">Term Mid-Test</span>
+<span class="font-tamil-label text-tamil-label text-on-surface-variant mt-0.5 z-10">இடைத் தேர்வு</span>
+</div>
+</div>
+</section>
+<!-- Fee History -->
+<section class="flex flex-col gap-2 mt-2">
+<div class="flex justify-between items-end px-1">
+<div>
+<h3 class="font-label-caps text-label-caps text-on-surface-variant tracking-wider uppercase">Fee History</h3>
+<p class="font-tamil-label text-tamil-label text-on-surface-variant mt-0.5 opacity-80">கட்டண வரலாறு</p>
+</div>
+<button class="font-label-caps text-label-caps text-primary hover:underline active:opacity-70 transition-opacity">
+                    View Ledger
+                </button>
+</div>
+<div class="bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant flex flex-col overflow-hidden">
+<!-- Overdue Item -->
+<div class="p-gutter border-b border-outline-variant flex justify-between items-center bg-error-container/10">
+<div class="flex flex-col">
+<span class="font-body-lg text-body-lg text-on-surface font-semibold">December 2023</span>
+<div class="flex items-center gap-1 mt-0.5">
+<span class="font-body-sm text-body-sm text-error font-medium">₹2,500</span>
+<span class="text-on-surface-variant text-[12px]">• Term 3 Installment</span>
+</div>
+</div>
+<div class="flex flex-col items-end gap-1">
+<span class="bg-status-error/10 text-error font-label-caps text-label-caps px-2.5 py-1 rounded-full flex items-center gap-1 border border-status-error/20">
+<span class="material-symbols-outlined text-[14px]">warning</span> Overdue
+                        </span>
+<span class="font-tamil-label text-tamil-label text-error opacity-80 pr-1">தாமதம்</span>
+</div>
+</div>
+<!-- Pending Item -->
+<div class="p-gutter border-b border-outline-variant flex justify-between items-center bg-surface-bright">
+<div class="flex flex-col">
+<span class="font-body-lg text-body-lg text-on-surface">November 2023</span>
+<div class="flex items-center gap-1 mt-0.5">
+<span class="font-body-sm text-body-sm text-on-surface-variant">₹2,500</span>
+<span class="text-outline text-[12px]">• Term 2 Installment</span>
+</div>
+</div>
+<div class="flex flex-col items-end gap-1">
+<span class="bg-status-warning/10 text-tertiary-container font-label-caps text-label-caps px-2.5 py-1 rounded-full flex items-center gap-1 border border-status-warning/20">
+<span class="material-symbols-outlined text-[14px]">schedule</span> Pending
+                        </span>
+<span class="font-tamil-label text-tamil-label text-tertiary-container opacity-80 pr-1">நிலுவையில்</span>
+</div>
+</div>
+<!-- Paid Item -->
+<div class="p-gutter flex justify-between items-center bg-surface-bright">
+<div class="flex flex-col">
+<span class="font-body-lg text-body-lg text-on-surface">October 2023</span>
+<div class="flex items-center gap-1 mt-0.5">
+<span class="font-body-sm text-body-sm text-on-surface-variant">₹2,500</span>
+<span class="text-outline text-[12px]">• Term 1 Installment</span>
+</div>
+</div>
+<div class="flex flex-col items-end gap-1">
+<span class="bg-status-success/10 text-secondary font-label-caps text-label-caps px-2.5 py-1 rounded-full flex items-center gap-1 border border-status-success/20">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> Paid
+                        </span>
+<span class="font-tamil-label text-tamil-label text-secondary opacity-80 pr-1">செலுத்தப்பட்டது</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Header Scroll Effect Script -->
+<script>
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 10) {
+                header.classList.add('shadow-md');
+                header.classList.remove('shadow-sm');
+            } else {
+                header.classList.add('shadow-sm');
+                header.classList.remove('shadow-md');
+            }
+        });
+    </script>
+</body></html>

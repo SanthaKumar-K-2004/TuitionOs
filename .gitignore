@@ -19,3 +19,4 @@ debug.keystore
 .build-outputs/
 .gradle-home/
 .qoder/
+/app/build/
